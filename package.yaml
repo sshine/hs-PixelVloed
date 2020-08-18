@@ -1,0 +1,39 @@
+name: PixelVloed
+version: 0.1.0
+
+homepage: https://github.com/sshine/hs-PixelVloed
+author: Simon Shine
+maintainer: shreddedglory@gmail.com
+copyright: 2020 Simon Shine
+extra-source-files:
+  - README.md
+
+dependencies:
+  - base
+  - vector
+  - bytestring
+
+default-extensions:
+  - OverloadedStrings
+
+library:
+  exposed-modules: PixelVloed
+  source-dirs: src
+
+executables:
+  PixelVloed:
+    source-dirs: app
+    main: Main.hs
+
+tests:
+  test:
+    main: test.hs
+    source-dirs: test
+    dependencies:
+      - PixelVloed
+      - tasty
+      - tasty-discover
+      - tasty-hspec
+      - tasty-hedgehog
+      - hedgehog
+      - hspec
